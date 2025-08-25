@@ -30,14 +30,6 @@ services:
       # IMPORTANT: Ensure this port matches your Dockerfile's PORT and .env's PORT
       - "traefik.http.services.my-app.loadbalancer.server.port=${PORT:-8080}"
 
-    healthcheck:
-      # This command now correctly checks the server's root path
-      test: ["CMD", "curl", "-f", "http://localhost:${PORT:-8080}/"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-
   traefik:
     image: traefik:v2.10
     container_name: traefik-vendor
@@ -72,9 +64,6 @@ services:
       timeout: 30s
       retries: 3
       start_period: 10s
-    depends_on:
-      app:
-        condition: service_healthy # Traefik waits for the app to be healthy
 
 volumes:
   # app_data: # Uncomment and use if your app needs persistent storage
