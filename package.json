@@ -61,7 +61,8 @@
     "lib0": "^0.2.42",
     "simple-peer": "^9.11.0",
     "y-protocols": "^1.0.6",
-    "y-webrtc": "^10.3.0"
+    "y-webrtc": "^10.3.0",
+    "ws": "^8.14.2"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
