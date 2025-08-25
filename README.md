@@ -4,7 +4,7 @@
 
 ```sh
 npm i y-webrtc
-PORT=4444 node ./bin/server.js
+PORT=8080 node ./bin/server.js
 ```
 
 ## Production
